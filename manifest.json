@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Read-It",
+  "version": "1.1",
+  "description": "Enhanced text-to-speech reader with controls and settings",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "tts",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "css": ["styles.css"]
+  }],
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
